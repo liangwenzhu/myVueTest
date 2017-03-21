@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no"/>
+    <title>Vue的测试</title>
+    <!--<link rel="icon" type="image/png" href="icon/logo.png">-->
+    <link rel="stylesheet" href="css/kuangjia/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="css/kuangjia/swiper-3.3.1.min.css">-->
+    <!--<link rel="stylesheet" media="screen and (min-width:768px)" href="css/self/base.css">-->
+</head>
+<body>
+
+<div id="app">
+    <span v-bind:title="message">213213</span>
+</div>
+<div id="app2" v-show="seen">IF U SEE Me?</div>
+<div id="app3">
+    <ol>
+        <li v-for="name in names">
+            {{name.text}}
+        </li>
+    </ol>
+</div>
+<div id="app5">
+    <p>{{message}}</p>
+    <button v-on:click="myFirstFn">逆转消息</button>
+</div>
+<div id="app6">
+    <p>{{message}}</p>
+    <input v-model="message">
+
+</div>
+<div id="app7">
+    <todo-item></todo-item>
+
+</div>
+
+<div id="app8">
+    <todo-item2 v-for="item in fruit" v-bind:message="item"></todo-item2>
+    <my-button></my-button>
+</div>
+
+<div id="app9">
+    <my-button></my-button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="js/kuangjia/vue.js"></script>
+<script src="js/self/base.js"></script>
+</body>
+</html>
