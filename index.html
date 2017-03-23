@@ -10,57 +10,90 @@
     <!--<link rel="stylesheet" media="screen and (min-width:768px)" href="css/self/base.css">-->
 </head>
 <body>
+<div class="container" style="width:700px;">
 
-<div id="app">
-    <span v-bind:title="message">213213</span>
+
+
+    <div id="app">
+        <span v-bind:title="message">213213</span>
+    </div>
+    <div id="app2" v-show="seen">IF U SEE Me?</div>
+    <div id="app3">
+        <ol>
+            <li v-for="name in names">
+                {{name.text}}
+            </li>
+        </ol>
+    </div>
+    <div id="app5">
+        <p>{{message}}</p>
+        <button v-on:click="myFirstFn">逆转消息</button>
+    </div>
+    <div id="app6">
+        <p>{{message}}</p>
+        <input v-model="message">
+
+    </div>
+    <div id="app7">
+        <todo-item></todo-item>
+
+    </div>
+    <div id="app8">
+        <todo-item2 v-for="item in fruit" v-bind:message="item"></todo-item2>
+        <my-button></my-button>
+    </div>
+    <div id="app9">
+        <my-button class="btn btn-success"></my-button>
+    </div>
+    <div id="app10">
+        Now is {{message2}}
+        <br>
+        <input v-model="message2">
+        <br>
+        <my-new-button v-bind:message1="message2"></my-new-button>
+        <my-new-input v-bind:message3="message2"></my-new-input>
+        <my-new-input2 v-bind:message4="message2"></my-new-input2>
+        <my-new-input3 v-bind:message5="message2"></my-new-input3>
+    </div>
+    <div id="app11">
+        <p>{{total}}</p>
+       <new-button1 v-on:shijian="counterFatherResult"></new-button1>
+        <new-button1 v-on:shijian="counterFatherResult"></new-button1>
+        <new-button1 v-on:click.native="counterFatherResult"></new-button1>
+    </div>
+    <div id="app12">
+        {{message}}
+        <input v-model="message">
+        <new-input1 v-bind:value="message" v-on:shijian="fatherValue"></new-input1>
+    </div>
+    <div id="app00">
+        {{message}}
+        <my-button00 v-bind:deliver="message"></my-button00>
+    </div>
+    <div id="app111">
+        <p>{{total}}</p>
+        <my-input v-on:shijian="faterCount"></my-input>
+        <my-input v-on:shijian="faterCount"></my-input>
+        <my-input v-on:click.native="faterCount"></my-input>
+    </div>
+    <div id="app13">
+        <father-component1></father-component1>
+    </div>
+    <div id="app14">
+        <father-component2></father-component2>
+    </div>
+    <div id="app15">
+        <father-component3></father-component3>
+    </div>
+    <div id="app16">
+        <father-component4></father-component4>
+    </div>
+    <div id="app17">
+        <father-commponent5 ref="app17-child"></father-commponent5>
+    </div>
 </div>
-<div id="app2" v-show="seen">IF U SEE Me?</div>
-<div id="app3">
-    <ol>
-        <li v-for="name in names">
-            {{name.text}}
-        </li>
-    </ol>
-</div>
-<div id="app5">
-    <p>{{message}}</p>
-    <button v-on:click="myFirstFn">逆转消息</button>
-</div>
-<div id="app6">
-    <p>{{message}}</p>
-    <input v-model="message">
-
-</div>
-<div id="app7">
-    <todo-item></todo-item>
-
-</div>
-
-<div id="app8">
-    <todo-item2 v-for="item in fruit" v-bind:message="item"></todo-item2>
-    <my-button></my-button>
-</div>
-
-<div id="app9">
-    <my-button></my-button>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="js/kuangjia/vue.js"></script>
+<!--<script src="js/kuangjia/jquery.min.js"></script>-->
 <script src="js/self/base.js"></script>
 </body>
 </html>
