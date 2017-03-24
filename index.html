@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no"/>
@@ -7,7 +7,7 @@
     <!--<link rel="icon" type="image/png" href="icon/logo.png">-->
     <link rel="stylesheet" href="css/kuangjia/bootstrap.min.css">
     <!--<link rel="stylesheet" href="css/kuangjia/swiper-3.3.1.min.css">-->
-    <!--<link rel="stylesheet" media="screen and (min-width:768px)" href="css/self/base.css">-->
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="css/self/base.css">
 </head>
 <body>
 <div class="container" style="width:700px;">
@@ -90,6 +90,20 @@
     </div>
     <div id="app17">
         <father-commponent5 ref="app17-child"></father-commponent5>
+    </div>
+    <div id="app18">
+        now Time is :{{computeTimeForComputed}}
+        now Time is:{{ computedTimeForMethods()}}
+    </div>
+    <div id="app19" >
+        <button class="btn btn-success" v-bind:class="classComputed" v-on:click="clickFn">当isActive为true时，加载active类</button>
+    </div>
+    <div id="app20">
+        <class-component1  v-bind:class="controlClass" v-on:click.native="controlClassFn"></class-component1>
+    </div>
+    <div id="app21">
+        <button class="btn btn-success" v-if="ok">成功</button>
+        <button class="btn btn-warning" v-else>警告</button>
     </div>
 </div>
 <script src="js/kuangjia/vue.js"></script>

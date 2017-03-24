@@ -311,3 +311,112 @@ Vue.component('father-commponent5',{
 var app17 = new Vue({
     el:'#app17'
 });
+/*computed 和 methods的区别*/
+/*computed是DOM加载后立马触发，而methods是需要触发条件？*/
+var app18 = new Vue({
+    el:'#app18',
+    data:{
+        time:0
+    },
+    computed:{
+        computeTimeForComputed:function(){
+            this.time =  Date.now();
+            return this.time;
+        }
+    },
+    methods:{
+        computedTimeForMethods:function(){
+            this.time =  Date.now();
+            return this.time;
+        }
+    }
+});
+
+/*class的动态绑定*/
+var app19 = new Vue({
+    el:'#app19',
+    data:{
+        classObj:{
+            active:false,
+            hides:true,
+        }
+    },
+    computed:{
+        classComputed:function(){
+            if(this.classObj.active==true){
+                return{
+                    active:false,
+                    hides:true,
+                }
+            }else{
+                return{
+                    active:true,
+                    hides:false,
+                }
+            }
+        }
+    },
+    methods:{
+        clickFn:function(){
+            if(this.classObj.active==false){
+                this.classObj.active = true;
+            }else{
+                this.classObj.active = false;
+            }
+
+        }
+    }
+});
+/*组件和class的动态绑定组合使用*/
+Vue.component('class-component1',{
+   template:'<button>组件的Class绑定</button>',
+});
+var app20 = new Vue({
+    el:'#app20',
+    data:{
+        classObject:{
+            active:true,
+            unactive:true,
+        }
+    },
+    computed:{
+        controlClass:function(){
+            if(this.classObject.active==true){
+                return{
+                    active:true,
+                    unactive:false,
+                }
+            }else{
+                return{
+                    active:false,
+                    unactive:true,
+                }
+            }
+
+        }
+    },
+    methods:{
+        controlClassFn:function(){
+            if(this.classObject.active==true){
+                this.classObject.active = false;
+            }else{
+                this.classObject.active = true;
+            }
+        }
+    }
+});
+var app21 = new Vue({
+    el:"#app21",
+    data:{
+        ok:false,
+    },
+    computed:{
+        computedTest:function(){
+            if(this.ok==false){
+                return ok=true
+            }else{
+                return ok=false
+            }
+        }
+    }
+});
